@@ -8,13 +8,13 @@ const timerElement = document.getElementById('timer');
 const checkLetters = () =>{
     const letters = quoteElement.querySelectorAll('span')
     const keyUp = inputElement.value.split('')
-    
+    let task =true;
     letters.forEach((charSpan, index)=>{
         const charToEvaluate = keyUp[index]
         if (charToEvaluate ==null){
             charSpan.classList.remove('incorrect')
             charSpan.classList.remove('correct')
-            task = false
+            task = false;
         } else if (charToEvaluate === charSpan.innerText){
             charSpan.classList.add('correct')
             charSpan.classList.remove('incorrect')
@@ -22,10 +22,10 @@ const checkLetters = () =>{
         }else{
             charSpan.classList.add('incorrect')
             charSpan.classList.remove('correct')
-            
+            task = false;
         }
 
-       
+        if(task)renderNewContent()
     })
 }
 inputElement.addEventListener('input', checkLetters)
