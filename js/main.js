@@ -24,8 +24,6 @@ const checkLetters = () =>{
             charSpan.classList.remove('correct')
             task = false;
         }
-
-       
     })
     if(task)renderNewContent()
 }
