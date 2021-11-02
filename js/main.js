@@ -25,8 +25,9 @@ const checkLetters = () =>{
             task = false;
         }
 
-        if(task)renderNewContent()
+       
     })
+    if(task)renderNewContent()
 }
 inputElement.addEventListener('input', checkLetters)
 
